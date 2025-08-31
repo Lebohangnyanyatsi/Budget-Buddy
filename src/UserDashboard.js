@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import BudgetPage from "./Screens/BudgetPage";
 import GoalPage from "./Screens/GoalPage";
 import Profile from "./Screens/Profile";
+import TransactionPage from "./TransactionPage";
 import "./App.css";
 
 function DashboardHome() {
@@ -46,6 +47,7 @@ export default function UserDashboard() {
           <Link to="" className={`dashboard-sidebar-link${location.pathname.endsWith("/user-dashboard") ? " active" : ""}`}>Home</Link>
           <Link to="budget" className={`dashboard-sidebar-link${location.pathname.includes("budget") ? " active" : ""}`}>Budget</Link>
           <Link to="goal" className={`dashboard-sidebar-link${location.pathname.includes("goal") ? " active" : ""}`}>Goals</Link>
+          <Link to="transaction" className={`dashboard-sidebar-link${location.pathname.includes("transaction") ? " active" : ""}`}>Transactions</Link> {/* <-- new link */}
           <Link to="profile" className={`dashboard-sidebar-link${location.pathname.includes("profile") ? " active" : ""}`}>Profile</Link>
         </aside>
 
@@ -55,6 +57,7 @@ export default function UserDashboard() {
             <Route index element={<DashboardHome />} />
             <Route path="budget" element={<BudgetPage />} />
             <Route path="goal" element={<GoalPage />} />
+            <Route path="transaction" element={<TransactionPage />} /> 
             <Route path="profile" element={<Profile />} />
           </Routes>
         </section>
